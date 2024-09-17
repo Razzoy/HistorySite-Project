@@ -17,7 +17,7 @@ function App() {
             <Route index element={<Today/>}/>
             <Route path={'/byDate'} element={<ByDate />} />
             <Route path={'/since'} element={<Since />} />
-            <Route path={'/*'} element={<NoPage />} />  
+            <Route path={'/*'} element={<NoPage />} />
           </Route>
         </Routes>
       </BrowserRouter >

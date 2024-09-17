@@ -5,19 +5,21 @@
     justify-content: center;
     align-items: center;
     background-color: $dark;
-    padding: 5rem 0 2rem;
+    padding: 11rem 0 5rem;
     ul{
         margin: 0;
         display: flex;
         padding: 0;
         list-style-type: none;
-        text-align: center;
-        gap: 2rem;
+        justify-content: space-evenly;
+        width: 100%;
         li{
             font-size: 2rem;
             a{
+                display: inline-block;
                 color: $border-light;
                 text-decoration: none;
+                
             }
             
         }

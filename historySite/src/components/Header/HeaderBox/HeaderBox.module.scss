@@ -4,16 +4,18 @@
 .box{
     background-color: $dark;
     border: 1rem solid $border-dark;
-    color: $primary;
+    color: $border-light;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translate(-50%);
-    width: 1150px;
-    height: 450px;
-    margin-bottom: -2rem;
-    text-align: center;
-
+    width: 72rem;
+    height: 26rem;
+    margin-bottom: -6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h1, h2{
         margin: 0;
     }
@@ -24,5 +26,8 @@
     h2{
         font-size: 2rem;
         font-weight: 400;
+        max-width: 50%;
+        height: 8rem;
+        text-align: center;
     }
 }
