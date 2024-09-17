@@ -1,0 +1,28 @@
+@use '../../../style/variables' as *;
+
+
+.box{
+    background-color: $dark;
+    border: 1rem solid $border-dark;
+    color: $primary;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%);
+    width: 1150px;
+    height: 450px;
+    margin-bottom: -2rem;
+    text-align: center;
+
+    h1, h2{
+        margin: 0;
+    }
+    h1{
+        font-size: 6rem;
+    }
+
+    h2{
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}

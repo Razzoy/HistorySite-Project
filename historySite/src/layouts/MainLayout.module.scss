@@ -1,0 +1,7 @@
+@use '../style/variables' as *;
+
+.bodyContainer{
+    width: 1440px;
+    background-color: $light;
+    margin: auto;
+}

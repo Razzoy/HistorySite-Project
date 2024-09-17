@@ -1,0 +1,25 @@
+@use '../../style/variables' as *;
+.navbarStyle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark;
+    padding: 5rem 0 2rem;
+    ul{
+        margin: 0;
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+        gap: 2rem;
+        li{
+            font-size: 2rem;
+            a{
+                color: $border-light;
+                text-decoration: none;
+            }
+            
+        }
+    }
+}
