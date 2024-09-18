@@ -4,21 +4,21 @@ import { HeaderBox } from '../HeaderBox/HeaderBox';
 
 
 
-export function Navbar({ headerText, headerContext }) {
+export function Navbar({ headerText, headerContext, theme}) {
     return (
         <>
-            <HeaderBox headerContext={headerContext} headerText={headerText} className={style.box} />
+            <HeaderBox headerContext={headerContext} headerText={headerText} theme={theme} />
 
-            <nav className={style.navbarStyle}>
+            <nav className={theme ? style.darkNav : style.navbarStyle}>
                 <ul>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? { textDecoration: 'underline', marginTop: '-5px' } : { textDecoration: 'none' }} to={'/byDate'}>BY DATE</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/byDate'}>BY DATE</NavLink>
                     </li>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? { textDecoration: 'underline', marginTop: '-5px' } : { textDecoration: 'none' }} to={'/'}>TODAY</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/'}>TODAY</NavLink>
                     </li>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? { textDecoration: 'underline', marginTop: '-5px' } : { textDecoration: 'none' }} to={'/since'}>SINCE</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/since'}>SINCE</NavLink>
                     </li>
                 </ul>
             </nav>

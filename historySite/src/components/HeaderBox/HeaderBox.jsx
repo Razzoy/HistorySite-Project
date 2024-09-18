@@ -1,9 +1,9 @@
-import style from '../Header/Header.module.scss'
+import style from '../NavBar/NavBar.module.scss'
 import { Circle } from '../Circle/Circle'
 
-export function HeaderBox({headerText, headerContext}) {
+export function HeaderBox({headerText, headerContext, theme}) {
     return(
-        <div className={style.box}>
+        <div className={theme ? style.darkBox : style.box}>
             <h1>{headerText}</h1>
             <h2>{headerContext}</h2>
             <Circle direction={'topLeft'}/>

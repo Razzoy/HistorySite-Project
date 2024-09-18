@@ -14,6 +14,11 @@ header{
         background-color: $border-dark;
         top: -8%;
     }
+
+    .darkTriangles{
+        @extend .triangles;
+        background-color: $primary;
+    }
     .triangleLeft{
         transform: rotate(-45deg);
         left: -8%;
@@ -24,33 +29,3 @@ header{
     }
 }
 
-.box{
-    background-color: $dark;
-    border: 1rem solid $border-dark;
-    color: $border-light;
-    position: absolute;
-    left: 50%;
-    bottom: 13%;
-    transform: translate(-50%);
-    width: 72rem;
-    height: 26rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    h1, h2{
-        margin: 0;
-    }
-    h1{
-        font-size: 6rem;
-    }
-
-    h2{
-        font-size: 2rem;
-        font-weight: 400;
-        max-width: 50%;
-        height: 8rem;
-        text-align: center;
-    }
-}

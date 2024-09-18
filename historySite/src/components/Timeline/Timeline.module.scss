@@ -1,0 +1,67 @@
+@use '../../style/variables' as *;
+
+.splitter{
+    background-color: $body;
+    padding: 1rem 0;
+}
+
+.splitterDark{
+    @extend .splitter;
+    background-color: $border-dark
+}
+
+.timelineStyling{
+    background-color: $dark;
+    position: relative;
+    img{
+        filter: invert(100%);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .timelineContainer{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .timeBox {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+        max-width: 40%;
+        color: white;
+        font-weight: 200;
+        h3, p{
+            font-size: 1.33rem;
+        }
+        footer{
+            display: flex;
+
+            img{
+                width: 2rem;
+            }
+            a{
+                font-size: 1.33rem;
+                color: white;
+            }
+        }
+    }
+    
+    .timeBox:nth-child(odd) {
+        align-self: flex-start;
+    }
+    
+    .timeBox:nth-child(even) {
+        align-self: flex-end;
+    }
+    
+}
+
+.darkTimelines{
+    @extend .timelineStyling;
+    background-color: $light;
+    img{
+        filter: invert(0%);
+    }
+}
