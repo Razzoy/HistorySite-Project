@@ -1,5 +1,5 @@
-import style from '../HeaderBox/HeaderBox.module.scss'
-import { Circle } from '../../Circle/Circle'
+import style from '../Header/Header.module.scss'
+import { Circle } from '../Circle/Circle'
 
 export function HeaderBox({headerText, headerContext}) {
     return(

@@ -4,8 +4,8 @@ import { Navbar } from "../components/NavBar/NavBar"
 export function Today() {
     return (
         <>
-            <Header headerText={'ON THIS DAY'} headerContext={'What happened on this day - historical events, deaths and births thoughout time'} />
-            <Navbar />
+            <Header />
+            <Navbar headerText={'ON THIS DAY'} headerContext={'What happened on this day - historical events, deaths and births thoughout time'}/>
         </>
     )
 }

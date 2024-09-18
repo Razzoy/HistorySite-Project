@@ -6,6 +6,8 @@
     align-items: center;
     background-color: $dark;
     padding: 11rem 0 5rem;
+    position: relative;
+    z-index: 1;
     ul{
         margin: 0;
         display: flex;

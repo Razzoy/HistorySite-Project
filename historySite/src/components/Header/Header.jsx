@@ -1,11 +1,11 @@
 import style from '../Header/Header.module.scss'
-import { HeaderBox } from './HeaderBox/HeaderBox'
 
-export function Header({headerText, headerContext}) {
+export function Header() {
     return (
         <header>
             <img src="./src/assets/history-header.png" alt="history image" />
-            <HeaderBox headerContext={headerContext} headerText={headerText} className={style.box}/>
+            <div className={`${style.triangleLeft} ${style.triangles}`}></div>
+            <div className={`${style.triangleRight} ${style.triangles}`}></div>
         </header>
     )
 }
