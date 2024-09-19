@@ -18,7 +18,7 @@ export function Navbar({ headerText, headerContext, theme}) {
                         <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/'}>TODAY</NavLink>
                     </li>
                     <li>
-                        <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/since'}>SINCE</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `${style.activeNav}` : style.inactive} to={'/about'}>ABOUT</NavLink>
                     </li>
                 </ul>
             </nav>

@@ -13,33 +13,95 @@
 .timelineStyling{
     background-color: $dark;
     position: relative;
+    padding-top: 2rem;
     img{
+        position: absolute;
+        right: 0;
+        padding-right: 2rem;
+        width: 5%;
         filter: invert(100%);
         &:hover{
             cursor: pointer;
         }
     }
+
+    .timeLine{
+        position: absolute;
+        top: 8rem;
+        bottom: 4rem;
+        left: 50%;
+        transform: translate(-50%);
+        height: auto;
+        width: 0.5rem;
+        background-color: $border-light;
+        div{ //.circle
+            border-color: $border-light;
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            top: -3rem;
+            left: -2.4rem;
+        }
+        h2{
+            position: absolute;
+            bottom: -5rem;
+            width: max-content;
+            left: -5.5rem;
+            color: $light;
+            font-weight: 300;
+        }
+    }
+
+    .darkLine{
+        @extend .timeLine;
+    }
+
     .timelineContainer{
         display: flex;
         flex-direction: column;
-
+        margin: 10rem 0 5rem;
     }
 
     .timeBox {
         display: flex;
         flex-direction: column;
         padding: 3rem;
-        max-width: 40%;
+        padding-bottom: 1rem;
+        max-width: 30%;
+        min-width: 30%;
         color: white;
         font-weight: 200;
-        h3, p{
+        position: relative;
+        header{
+            position: absolute;
+            overflow: visible; //tillad at Year kan gå udover headeren
+            top: -3rem;
+            border-bottom: 0.5rem solid $border-light;
+            width: 12rem;
+            height: 4rem;
+
+            div{ //.circle
+                border-color: $border-light;
+                position: absolute;
+                
+                top: 2.5rem;
+                background-color: $body;
+            }
+            h3{
+                font-size: 1.33rem;
+                position: absolute;
+                font-weight: 300;
+            }
+        }
+        p{
             font-size: 1.33rem;
         }
         footer{
             display: flex;
-
             img{
+                position: static;
                 width: 2rem;
+                padding: 0;
             }
             a{
                 font-size: 1.33rem;
@@ -50,18 +112,72 @@
     
     .timeBox:nth-child(odd) {
         align-self: flex-start;
+        header{
+            right: -12rem;
+            div{ //.circle
+                right: -1.65rem;
+            }
+            h3{
+                left: -5rem;
+            }
+        }
     }
     
     .timeBox:nth-child(even) {
         align-self: flex-end;
+        header{
+            left: -12rem;
+            div{ //.circle
+                left: -1.65rem;
+            }
+            h3{
+                right: -5rem;
+            }
+        }
+        footer{
+            justify-items: flex-end;
+        }
+    }
+
+    .darkTime{
+        @extend .timeBox;
+        color: $body;
+        header{
+            div { //.circle
+                background-color: $light;
+            }
+        }
+        footer{
+            a{
+                color: $body;
+            }
+        }
+
     }
     
 }
 
-.darkTimelines{
+.darkStyling{
     @extend .timelineStyling;
     background-color: $light;
     img{
         filter: invert(0%);
     }
+}
+
+.backToTop {
+    position: absolute;
+    width: 59px !important;
+    bottom: 1rem;
+    right: 1rem;
+    bottom: 2rem;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.backToDark{
+    @extend .backToTop;
+    filter: invert(0%);
 }

@@ -2,12 +2,13 @@
 
 
 .circle{
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background-color: $border-light;
     margin: 0.5rem;
     position: absolute;
+    border: 5px solid $border-light;
 }
 
 .topLeft{

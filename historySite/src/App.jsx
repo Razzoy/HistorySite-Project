@@ -3,9 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useContext, useState } from 'react'
 import { ThemeContext } from './context/ThemeContext'
 import { MainLayout } from './layouts/MainLayout'
-import { Today } from './pages/today'
-import { ByDate } from './pages/byDate'
-import { About } from './pages/since'
+import { Today } from './pages/Today'
+import { ByDate } from './pages/ByDate'
+import { About } from './pages/About'
 import { NoPage } from './pages/NoPage'
 
 function App() {

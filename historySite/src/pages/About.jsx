@@ -1,14 +1,14 @@
 import { Header } from "../components/Header/Header"
 import { Navbar } from "../components/NavBar/NavBar"
-import { Timeline } from "../components/Timeline/Timeline"
+import { AboutContent } from "../components/AboutContent/AboutContent"
 
 
 export function About({theme, action}) {
     return (
         <>
             <Header theme={theme} />
-            <Navbar theme={theme} headerText={'ABOUT'} headerContext={'What happened on this day - Here you can enter a specific year to get only events for that year'} />
-            <Timeline theme={theme} action={action}/>
+            <Navbar theme={theme} headerText={'ABOUT'} headerContext={'Here you can read about this page'} />
+            <AboutContent theme={theme} action={action}/>
         </>
     )
 }
