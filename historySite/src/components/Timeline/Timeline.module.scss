@@ -1,40 +1,44 @@
 @use '../../style/variables' as *;
 
-.splitter{
+.splitter {
     background-color: $body;
     padding: 1rem 0;
 }
 
-.splitterDark{
+.splitterDark {
     @extend .splitter;
     background-color: $border-dark
 }
 
-.timelineStyling{
+.timelineStyling {
     background-color: $dark;
     position: relative;
     padding-top: 2rem;
-    img{
+
+    img {
         position: absolute;
         right: 0;
         padding-right: 2rem;
         width: 5%;
         filter: invert(100%);
-        &:hover{
+
+        &:hover {
             cursor: pointer;
         }
     }
 
-    .timeLine{
+    .timeLine {
         position: absolute;
         top: 8rem;
         bottom: 4rem;
         left: 50%;
         transform: translate(-50%);
         height: auto;
-        width: 0.5rem;
+        width: 0.4rem;
         background-color: $border-light;
-        div{ //.circle
+
+        div {
+            //.circle
             border-color: $border-light;
             width: 60px;
             height: 60px;
@@ -42,7 +46,8 @@
             top: -3rem;
             left: -2.4rem;
         }
-        h2{
+
+        h2 {
             position: absolute;
             bottom: 10rem;
             width: max-content;
@@ -54,17 +59,22 @@
             padding: 1rem;
             z-index: 3;
         }
+
+        @media screen and (max-width: 852px){
+            left: 90%;
+        }
     }
 
-    .darkLine{
+    .darkLine {
         @extend .timeLine;
-        h2{
+
+        h2 {
             background-color: $light;
             color: $dark;
         }
     }
 
-    .timelineContainer{
+    .timelineContainer {
         display: flex;
         flex-direction: column;
         margin: 20rem 0 0rem;
@@ -80,96 +90,181 @@
         color: white;
         font-weight: 200;
         position: relative;
-        header{
+
+        header {
             position: absolute;
             overflow: visible; //tillad at Year kan gå udover headeren
             top: -3rem;
-            border-bottom: 0.5rem solid $border-light;
+            border-bottom: 0.4rem solid $border-light;
             width: 12rem;
             height: 4rem;
 
-            div{ //.circle
+            div {
+                //.circle
                 border-color: $border-light;
                 position: absolute;
-                
+
                 top: 2.5rem;
                 background-color: $body;
             }
-            h3{
+
+            h3 {
                 font-size: 1.33rem;
                 position: absolute;
                 font-weight: 300;
             }
         }
-        p{
+
+        p {
             font-size: 1.33rem;
         }
-        footer{
+
+        footer {
             display: flex;
-            img{
+
+            img {
                 position: static;
                 width: 2rem;
                 padding: 0;
             }
-            a{
+
+            a {
                 font-size: 1.33rem;
                 color: white;
             }
         }
+
+        @media screen and (max-width: 852px) {
+            padding-left: 30%;
+            max-width: 50%;
+            p{
+            font-size: 2rem;
+            min-width: 720px;
+            }
+            header{
+                h3{
+                    font-size: 2rem;
+                }
+
+                div{
+                    left: 9.75rem;
+                    top: 2rem;
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+            footer{
+                img{
+                    width: 2rem;
+                }
+                a{
+                    font-size: 2rem;
+                }
+            }
+        }
+
     }
-    
+
     .timeBox:nth-child(odd) {
-        
+
         align-self: flex-end;
-        header{
+
+        header {
             left: -12rem;
-            div{ //.circle
+
+            div {
+                //.circle
                 left: -1.65rem;
             }
-            h3{
+
+            h3 {
                 right: -5rem;
             }
         }
-    }
-    
-    .timeBox:nth-child(even) {
-        align-self: flex-start;
-        header{
-            right: -12rem;
-            div{ //.circle
-                right: -1.65rem;
+
+        @media screen and (max-width: 852px) {
+            align-self: flex-start;
+            header {
+                left: 92%;
+
+                div {
+                    //.circle
+                    left: 9.75rem;
+                    top: 2rem;
+                }
+
+                h3 {
+                    left: -6rem;
+                    top: -1rem;
+                }
+            
             }
-            h3{
-                left: -5rem;
-            }
-        }
-        footer{
-            justify-items: flex-end;
         }
     }
 
-    .darkTime{
+    .timeBox:nth-child(even) {
+        align-self: flex-start;
+
+        header {
+            right: -12rem;
+
+            div {
+                //.circle
+                right: -1.65rem;
+            }
+
+            h3 {
+                left: -5rem;
+            }
+        }
+
+        footer {
+            justify-items: flex-end;
+        }
+
+        @media screen and (max-width: 852px) {
+            header {
+                right: -6rem;
+    
+                div {
+                    //.circle
+                    right: -1.65rem;
+                }
+    
+                h3 {
+                    left: -5rem;
+                    top: -1rem;
+                }
+            }
+        }
+    }
+
+    .darkTime {
         @extend .timeBox;
         color: $body;
-        header{
-            div { //.circle
+
+        header {
+            div {
+                //.circle
                 background-color: $light;
             }
         }
-        footer{
-            a{
+
+        footer {
+            a {
                 color: $body;
             }
         }
 
     }
-    
+
 }
 
-.darkStyling{
+.darkStyling {
     @extend .timelineStyling;
     background-color: $light;
-    img{
+
+    img {
         filter: invert(0%);
     }
 }
@@ -181,12 +276,73 @@
     right: 1rem;
     bottom: 2rem;
     opacity: 0.7;
-    &:hover{
+
+    &:hover {
         opacity: 1;
     }
 }
 
-.backToDark{
+.backToDark {
     @extend .backToTop;
     filter: invert(0%);
+}
+
+.aboutArticle {
+    @extend .timelineStyling;
+    padding-top: 0;
+    padding-bottom: 5rem;
+
+    img {
+        padding-top: 2rem;
+    }
+
+    h2,
+    h3,
+    p {
+        color: $primary;
+        font-weight: 400;
+        padding: 0 10rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+        font-family: "Limelight", sans-serif;
+        font-weight: 600;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        text-decoration: underline;
+        margin: 0;
+        font-weight: 600;
+
+    }
+
+    p {
+        font-size: 1.3rem;
+        margin: 0 0 2rem;
+    }
+
+    @media screen and (max-width: 852px) {}
+    h2{
+        font-size: 4rem;
+    }
+    h3{
+        font-size: 2.5rem;
+    }
+    p{
+         font-size: 2rem   
+    }
+}
+
+.aboutDark {
+    @extend .aboutArticle;
+    @extend .darkStyling;
+
+    h2,
+    h3,
+    p {
+        color: $dark;
+    }
 }
