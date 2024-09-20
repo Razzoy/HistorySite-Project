@@ -4,10 +4,10 @@ import { HeaderBox } from '../HeaderBox/HeaderBox';
 
 
 
-export function Navbar({ headerText, headerContext, theme}) {
+export function Navbar({ headerText, headerContext, theme, dateSetter, setDay, setMonth}) {
     return (
         <>
-            <HeaderBox headerContext={headerContext} headerText={headerText} theme={theme} />
+            <HeaderBox setMonth={setMonth} setDay={setDay} headerContext={headerContext} headerText={headerText} theme={theme} dateSetter={dateSetter} />
 
             <nav className={theme ? style.darkNav : style.navbarStyle}>
                 <ul>

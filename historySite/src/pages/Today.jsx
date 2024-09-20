@@ -3,6 +3,7 @@ import { Navbar } from "../components/NavBar/NavBar"
 import { Timeline } from "../components/Timeline/Timeline"
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import style from '../App.module.scss'
+import { useEffect } from "react"
 
 const getCurrentDate = () => {
   const today = new Date();
@@ -35,6 +36,8 @@ export function Today({ theme, action }) {
       <div className={style.message}>ERROR !!!</div>
     );
   }
+
+  
 
   return (
     <>

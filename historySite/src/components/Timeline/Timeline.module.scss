@@ -44,22 +44,30 @@
         }
         h2{
             position: absolute;
-            bottom: -5rem;
+            bottom: 10rem;
             width: max-content;
-            left: -5.5rem;
+            left: 50%;
+            transform: translate(-50%);
             color: $light;
             font-weight: 300;
+            background-color: $dark;
+            padding: 1rem;
+            z-index: 3;
         }
     }
 
     .darkLine{
         @extend .timeLine;
+        h2{
+            background-color: $light;
+            color: $dark;
+        }
     }
 
     .timelineContainer{
         display: flex;
         flex-direction: column;
-        margin: 10rem 0 5rem;
+        margin: 20rem 0 0rem;
     }
 
     .timeBox {
@@ -111,19 +119,7 @@
     }
     
     .timeBox:nth-child(odd) {
-        align-self: flex-start;
-        header{
-            right: -12rem;
-            div{ //.circle
-                right: -1.65rem;
-            }
-            h3{
-                left: -5rem;
-            }
-        }
-    }
-    
-    .timeBox:nth-child(even) {
+        
         align-self: flex-end;
         header{
             left: -12rem;
@@ -132,6 +128,19 @@
             }
             h3{
                 right: -5rem;
+            }
+        }
+    }
+    
+    .timeBox:nth-child(even) {
+        align-self: flex-start;
+        header{
+            right: -12rem;
+            div{ //.circle
+                right: -1.65rem;
+            }
+            h3{
+                left: -5rem;
             }
         }
         footer{

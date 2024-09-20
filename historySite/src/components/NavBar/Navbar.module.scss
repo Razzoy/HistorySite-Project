@@ -9,38 +9,42 @@
     padding: 11rem 0 5rem;
     position: relative;
     z-index: 1;
-    ul{
+
+    ul {
         margin: 0;
         display: flex;
         padding: 0;
         list-style-type: none;
         justify-content: space-evenly;
         width: 100%;
-        li{
+
+        li {
             font-size: 2rem;
-            a{
+
+            a {
                 display: inline-block;
                 color: $border-light;
                 text-decoration: none;
             }
-            
+
         }
     }
 }
 
-.darkNav{
+.darkNav {
     @extend .navbarStyle;
     background-color: $light;
-    ul{
-        li{
-            a{
+
+    ul {
+        li {
+            a {
                 color: $border-dark;
             }
         }
     }
 }
 
-.box{
+.box {
     background-color: $dark;
     border: 1rem solid $border-dark;
     color: $border-light;
@@ -55,14 +59,18 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
-    h1, h2{
+    gap: 3rem;
+
+    h1,
+    h2 {
         margin: 0;
     }
-    h1{
+
+    h1 {
         font-size: 6rem;
     }
 
-    h2{
+    h2 {
         font-size: 2rem;
         font-weight: 400;
         max-width: 50%;
@@ -71,7 +79,7 @@
     }
 }
 
-.darkBox{
+.darkBox {
     @extend .box;
     background-color: white;
     border: 1rem solid $border-light2;
@@ -79,11 +87,77 @@
 
 }
 
-.activeNav{
+.activeNav {
     text-decoration: underline !important;
     transform: translateY(-80%);
 }
 
-.inactiveNav{
+.inactiveNav {
     text-decoration: none;
+}
+
+.dateBox {
+    display: flex;
+    gap: 1rem;
+
+    .formBox {
+        border-bottom: 0.3rem solid $primary;
+        margin-bottom: 1rem;
+        display: flex;
+
+        input,
+        p {
+            font-family: "Limelight", sans-serif;
+            font-weight: 400;
+            font-size: 6rem;
+            color: $primary;
+            margin-bottom: -20px;
+
+        }
+
+        input {
+            max-width: 9rem;
+            background-color: transparent;
+            border: none;
+
+            &::placeholder {
+                color: $primary;
+            }
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            margin-bottom: -20px;
+
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+}
+
+.dateDark {
+    @extend .dateBox;
+
+
+    .formDark {
+        @extend .formBox;
+        border-color: $border-light;
+        input,
+        p {
+            color: $border-light;
+        }
+
+        input{
+            &::placeholder {
+                color: $border-light;
+            }
+        }
+
+
+    }
 }
